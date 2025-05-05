@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}"/>
+</head>
+<body>
+<form th:action="@{/paso3}"method="POST" id="contenedor">
+    <p>Seleccione metodo de pago</p>
+    <select name="metodoPago">
+        <option value="Efectivo">Efectivo</option>
+        <option value="Mercado Pago">Mercado Pago</option>
+    </select>
+    <button type ="submit">Confirmar</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}"/>
+</head>
+<body>
+
+
+<form th:action="@{/paso1}" th:object="${datosEnvio}" id="contenedor">
+    <label for="origen">Origen:</label> <!--en for debe ir el id del input -->
+    <input th:field="*{origen}" type="text" id="origen" placeholder="Ingrese el origen">
+
+    <label for="destino">Destino:</label>
+    <input th:field="*{destino}" type="text" id="destino" placeholder="Ingrese el destino">
+
+    <label for="cantBultos">Cantidad de Bultos:</label>
+    <input th:field="*{cantBultos}" type="text" id="cantBultos" placeholder="Ingrese cantidad de bultos">
+
+    <label for="peso">Peso:</label>
+    <input th:field="*{peso}" type="text" id="peso" placeholder="Ingrese el peso total">
+
+    <button type="submit">Calcular Precio</button>
+</form>
+
+</body>
+</html>

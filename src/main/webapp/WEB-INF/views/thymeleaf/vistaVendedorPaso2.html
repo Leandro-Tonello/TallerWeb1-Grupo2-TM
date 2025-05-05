@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}"/>
+</head>
+<body>
+
+<div id="contenedor">
+    <a href="/spring/vistaVendedor">cancelar</a>
+
+    <p th:text="'Origen: ' + *{datosEnvio.origen}"></p>
+    <p th:text="'Destino: ' + *{datosEnvio.destino}"></p>
+    <p th:text="'Cantidad De Bultos: ' + *{datosEnvio.cantBultos}"></p>
+    <p th:text="'Peso Total: ' + *{datosEnvio.peso} + ' kg'"></p>
+    <p th:if="*{precio!=null}"th:text="*{precio}"></p>
+    <form th:action="@{/paso2}">
+        <button type ="submit">Confirmar</button>
+    </form>
+</div>
+</body>
+</html>

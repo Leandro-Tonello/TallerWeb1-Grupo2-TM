@@ -1,0 +1,25 @@
+*{
+ font-family: Arial, sans-serif;
+}
+body{
+background-color:beige;
+display:flex;
+justify-content :center;
+align-items : center;
+}
+
+#contenedor{
+background-color:white;
+display:flex;
+flex-direction:column;
+justify-content :space-around;
+border-radius: 10px;
+border :1px solid black;
+padding:20px;
+}
+input{
+margin:10px;
+}
+span{
+margin:3px;
+}
