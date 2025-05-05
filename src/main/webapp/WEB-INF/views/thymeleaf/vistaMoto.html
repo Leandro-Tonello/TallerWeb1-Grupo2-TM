@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div th:if="${datosEnvio!=null}">
+    <p th:text="'Origen: ' + *{datosEnvio.origen}"></p>
+    <p th:text="'Destino: ' + *{datosEnvio.destino}"></p>
+    <p th:text="'Cantidad De Bultos: ' + *{datosEnvio.cantBultos}"></p>
+    <p th:text="'Peso Total: ' + *{datosEnvio.peso} + ' kg'"></p>
+    <p th:if="*{precio!=null}"th:text="*{precio}"></p>
+    <form th:action="@{/home}">
+        <button type ="submit">Aceptar</button>
+    </form>
+</div>
+<div th:unless="${datosEnvio!=null}">No hay viajes por el momento..</div>
+<!-- Por ahora no anda tira error porque le estoy pasando el DTO siempre por
+el controlador y esta intenando acceder supongo-->
+</body>
+</html>

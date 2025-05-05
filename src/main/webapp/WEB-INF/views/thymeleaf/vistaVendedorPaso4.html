@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" th:href="@{/css/estilos.css}"/>
+</head>
+<body>
+
+<div id="contenedor">
+  <p th:text="'Origen: ' + *{datosEnvio.origen}"></p>
+  <p th:text="'Destino: ' + *{datosEnvio.destino}"></p>
+  <p th:text="'Cantidad De Bultos: ' + *{datosEnvio.cantBultos}"></p>
+  <p th:text="'Peso Total: ' + *{datosEnvio.peso} + ' kg'" ></p>
+  <p th:text="'Precio: ' + ${precio} +'$'"></p>
+  <p th:text="' Método de pago: ' + ${metodoPago}"></p>
+  <p th:text="'Llegara en: ' +${tiempoEspera} + ' min'"></p>
+</div>
+</body>
+</html>
