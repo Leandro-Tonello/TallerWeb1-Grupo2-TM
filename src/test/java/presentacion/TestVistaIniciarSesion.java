@@ -16,8 +16,8 @@ public class TestVistaIniciarSesion {
     @Test
     public void siNoSeIngresanMailYContraseñaNoSePuedeIngresarYMandaUnMensajeDeError() {
             givenNoExisteUsuarioConEseMailYContraseña();
-            ModelAndView view = whenNoSeIngresanLosDatos(null,null);
-            thenNoSePuedeIngresar(view);
+            ModelAndView view = whenNoSeIngresanLosDatos("","");
+            thenNoSePuedeIngresar(view, "Debe ingresar la contraseña y el mail");
     }
 
     private void givenNoExisteUsuarioConEseMailYContraseña() {
@@ -32,9 +32,9 @@ public class TestVistaIniciarSesion {
 
     }
 
-    private void thenNoSePuedeIngresar(ModelAndView view) {
+    private void thenNoSePuedeIngresar(ModelAndView view, String mensaje) {
         assertThat(view.getViewName(), equalToIgnoringCase("iniciarSesion"));
-        assertThat(view.getModel().get("error").toString(), equalToIgnoringCase("faltan campos"));
+        assertThat(view.getModel().get("mensaje").toString(), equalToIgnoringCase(mensaje));
     }
 
     @Test
@@ -63,11 +63,12 @@ public class TestVistaIniciarSesion {
     public void siNoSeIngresaElCorreoNoSePuedeIngresar() {
         givenExisteElUsuario();
         ModelAndView view = whenSiNoSeIngresaElCorreoNoSePuedeIngresar();
-        thenNoSePuedeIngresarSiFaltaMail(view);
+        thenNoSePuedeIngresarSiFaltaMail(view, "falta el mail");
     }
 
-    private void thenNoSePuedeIngresarSiFaltaMail(ModelAndView view) {
+    private void thenNoSePuedeIngresarSiFaltaMail(ModelAndView view, String mensaje) {
         assertThat(view.getViewName(), equalToIgnoringCase("iniciarSesion"));
+        assertThat(view.getModel().get("error").toString(), equalToIgnoringCase(mensaje));
     }
 
     private ModelAndView whenSiNoSeIngresaElCorreoNoSePuedeIngresar() {

@@ -17,15 +17,24 @@ public class ControladorLogin {
 
     @RequestMapping(path = "/iniciarSesion", method = RequestMethod.GET)
     public ModelAndView irAIniciarSesion(String mail, String contra) {
-      ;
+       ModelMap model = new ModelMap();
 
-        if(mail != null && contra != null) {
-            return new ModelAndView("home");
+        if(contra.isEmpty() && mail.isEmpty()){
+            model.put("mensaje", "Debe ingresar la contraseña y el mail");
+            return new ModelAndView("iniciarSesion", model);
         }
-        ModelMap model = new ModelMap();
-        model.put("error","faltan campos");
 
-        return new ModelAndView("iniciarSesion", model); }
+       if(mail.isEmpty()){
+           model.put("mensaje", "Debe ingresar el mail");
+           return new ModelAndView("iniciarSesion", model);
+       }
+       if(contra.isEmpty()){
+           model.put("mensaje", "Debe ingresar la comtraseña");
+           return new ModelAndView("iniciarSesion", model);
+       }
+
+
+        return new ModelAndView("home"); }
 
 }
 
