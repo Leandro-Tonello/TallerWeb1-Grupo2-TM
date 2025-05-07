@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Perfil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container mt-4">
+
+    <div class="mb-3">
+        <a href="#" class="btn btn-outline-danger">&larr; Volver</a>
+    </div>
+
+    <div class="text-center mb-4">
+        <!--      <img th:src="@{}" alt="Avatar" class="rounded-circle" width="100" height="100">-->
+             <div class="mt-2">
+                 <button class="btn btn-outline-secondary btn-sm">Editar foto de perfil</button>
+             </div>
+            <!-- <h4 th:text="${usuario.nombre}"></h4>
+            <p class="text-muted">ID <span th:text="${usuario.id}"></span></p>-->
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="card-title">Mantén tu perfil actualizado</h5>
+
+            <div class="mb-3">
+                <label class="form-label">Información del vehículo (solo moto/auto)</label>
+                <a href="#" class="btn btn-warning btn-sm">Solo cargar en caso de actualización</a>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Habilitación de rutramur</label>
+                <a href="#" class="btn btn-warning btn-sm">Solo cargar en caso de actualización</a>
+            </div>
+        </div>
+    </div>
+
+    <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <span>Cuenta</span>
+            <a href="#" class="text-primary">&rarr;</a>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <span>Vehículo</span>
+            <a href="#" class="text-primary">&rarr;</a>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <span>Datos personales y bancarios</span>
+            <a href="#" class="text-primary">&rarr;</a>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <span>Otros documentos</span>
+            <a href="#" class="text-primary">&rarr;</a>
+        </li>
+    </ul>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
