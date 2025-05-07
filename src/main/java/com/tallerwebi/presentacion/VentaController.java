@@ -49,4 +49,10 @@ public class VentaController {
         modelMap.put("datosEnvio",datosEnvio);
         return new ModelAndView("vistaMoto",modelMap);
     }
+
+    @RequestMapping("/vistaMiPerfil")
+    public ModelAndView irAVistaMiPerfil(){
+        ModelMap modelMap = new ModelMap();
+        return new ModelAndView("vistaMiPerfil",modelMap);
+    }
 }
